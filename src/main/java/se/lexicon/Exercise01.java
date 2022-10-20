@@ -1,7 +1,5 @@
 package se.lexicon;
 
-import java.util.Arrays;
-
 public class Exercise01 {
 
     /**
@@ -10,9 +8,10 @@ public class Exercise01 {
      * Expected output: 11 23 39 etc.
      */
     public static void ex1() {
-
+        //Elements
         int[] numbers = {12, 13, 14, 65};
 
+        //printing of the array
         for (int number : numbers)
             System.out.println(number);
 

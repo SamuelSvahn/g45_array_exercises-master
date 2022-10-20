@@ -1,6 +1,10 @@
 package se.lexicon;
 
+import java.text.DecimalFormat;
+
 public class Exercise06 {
+
+    private static final DecimalFormat decimalFormat = new DecimalFormat("#.##");
 
     /**
      * 6. Write a program which will set up an array to hold the next values in this order: 43, 5, 23, 17, 2, 14 and print the average of these 6 numbers.
@@ -15,9 +19,10 @@ public class Exercise06 {
             sum += num;
         }
         double average = sum / numbers.length;
-        System.out.println("The average of the array is " + average);
+        System.out.println("The average of the array is " + decimalFormat.format(average));
 
     }
+
 }
 
 

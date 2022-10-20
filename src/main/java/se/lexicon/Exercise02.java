@@ -8,12 +8,12 @@ public class Exercise02 {
      * Expected output: Index position of number 5 is: 2.
      */
     public static void ex2() {
-
+    //Print index of a chosen element.
         int result = indexOf(300);
         System.out.println(result);
 
     }
-
+    // Method to find and return the index
     public static int indexOf(int number) {
         int[] numbers = {100, 500, 222, 300, 1000};
 

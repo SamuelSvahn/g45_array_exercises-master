@@ -1,5 +1,7 @@
 package se.lexicon;
 
+import java.util.Arrays;
+
 public class Exercise13 {
 
   /**
@@ -10,6 +12,22 @@ public class Exercise13 {
    */
   public static void ex13() {
 
-  }
+    int array1[] = {1, 2, 3, 4, 5, 6};
+    int array2[] = new int[array1.length];
+    int front = 0;
+    int back = array1.length - 1;
+    for (int j : array1) {
+      if (j % 2 == 0) {
+        array2[front] = j;
+        front++;
+      } else {
+        array2[back] = j;
+        back--;
+      }
 
+    }
+
+    System.out.println(Arrays.toString(array1));
+    System.out.println(Arrays.toString(array2));
+  }
 }
