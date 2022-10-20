@@ -18,7 +18,6 @@ public class Exercise10 {
                 int f2 = table[row][j];
                 System.out.print(" " + (f1 * f2));
             }
-
         }
 
 

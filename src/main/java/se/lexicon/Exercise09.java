@@ -12,12 +12,14 @@ public class Exercise09 {
      */
     public static void ex9() {
 
+        // Scanner that takes the input from user
         int[] array = new int[4];
         Scanner scan = new Scanner(System.in);
         System.out.println("Enter 4 elements of array");
         for (int get = 0; get < array.length; get++) {
             array[get] = scan.nextInt();
         }
+        // Code to make the array bigger
         System.out.println("Do you want to Enter more Values, How many more do you want to enter ");
         int more = scan.nextInt();
         if (more != 0) {
@@ -26,6 +28,8 @@ public class Exercise09 {
             for (int i = array.length; i < newArray.length; i++) {
                 newArray[i] = scan.nextInt();
             }
+            // code to print the new result
+
             System.out.println("Array with new values");
             for (int i = 0; i < newArray.length; i++)
                 System.out.println(newArray[i]);
