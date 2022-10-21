@@ -17,7 +17,7 @@ public class Exercise13 {
     int front = 0;
     int back = array1.length - 1;
     for (int j : array1) {
-      if (j % 2 == 0) {
+      if (j % 2 != 0) {
         array2[front] = j;
         front++;
       } else {

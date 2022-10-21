@@ -5,62 +5,31 @@ import java.util.Scanner;
 
 public class Exercise11 {
 
-  static String[] initArray = new String[0];
   public static void ex11() {
-    int userInput = getUserInput();
-    initArray = addNumberToArray(initArray, userInput);
-    addMoreNumber(initArray);
-    printArray(initArray);
-    reverseArray(initArray,initArray.length);
-  }
+    int[] arrays = new int[2];
+    System.out.println("How many numbers (at least 2) do you want to add: ");
+    Scanner scan = new Scanner(System.in);
+    int moreNumber = scan.nextInt();
+    int tmp1 = moreNumber - arrays.length;
+    int tmp2 = arrays.length + tmp1;
 
 
-  public static int getUserInput () {
-    Scanner scanner = new Scanner(System.in);
-    System.out.println("Enter the numbers press 0 to see result: ");
-
-    int userInput = scanner.nextInt();
-    return userInput;
-  }
-
-  public static String[] addNumberToArray (String[] originArray, int newNumber) {
-    String[] newArray = Arrays.copyOf(originArray, originArray.length + 1);
-    newArray[newArray.length - 1] = String.valueOf(newNumber);
-    return newArray;
-  }
-
-
-  public static String[] addMoreNumber (String[] arrays) {
-    boolean userContinue = true;
-    while (userContinue) {
-      int userInput = getUserInput();
-      initArray = addNumberToArray(initArray, userInput);
-      if (userInput == 0) {
-        break;
-      } else userContinue = true;
+    arrays = Arrays.copyOf(arrays, tmp2);
+    int[] revArray = new int[arrays.length];
+    System.out.println("Please enter your " + moreNumber + " numbers here:");
+    for (int i = 0; i < arrays.length; i++) {
+      arrays[i] = scan.nextInt();
     }
-    return arrays;
+
+    int i = arrays.length - 1;
+    for (int j = 0; j < revArray.length; j++) {
+      revArray[j] = arrays[i];
+      i--;
+    }
+    System.out.println("Your Numbers: ");
+    System.out.println(Arrays.toString(arrays));
+    System.out.println("...and your numbers in reverse: ");
+    System.out.println(Arrays.toString(revArray));
   }
 
-  public static String[] printArray(String[] array) {
-    System.out.println("Array: ");
-    for (int i = 0; i < array.length-1; i++) {
-      System.out.println(array[i]);
-    }
-    return array;
-  }
-
-  public static String[] reverseArray(String[] array, int n) {
-    String[] newArray = new String[n];
-    int j = n;
-    for (int i = 0; i < n; i++) {
-      newArray[j-1] = array[i];
-      j = j - 1;
-    }
-    System.out.println("Reverse array: ");
-    for (int k = 1; k < n; k++) {
-      System.out.println(newArray[k]);
-    }
-    return array;
-  }
 }
